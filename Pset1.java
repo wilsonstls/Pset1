@@ -7,49 +7,43 @@ program generates 1-half of a pyramid filled in with hashtag systems (#). It is 
 
 import java.util.Scanner;
 
+
 public class Pset1 
 {
     public static void main(String[] varArgs) 
     {
-        System.out.println();    
-        System.out.println("Half of a pyramid, made out of hastag symbols, will be generated as a ");
-        System.out.println("result of user input for height. It will appear on the screen right justified");
-        System.out.println();
+        System.out.println("\nHalf of a pyramid, made out of hastag symbols, will be generated as a ");
+        System.out.println("result of user input for height. It will appear on the screen right justified\n");
+
+        StringBuilder lineBuilder = new StringBuilder();
         Scanner input = new Scanner(System.in);
         int high;    // row height
         int indx;    // index holder
         
            do
            {
-              System.out.println("For the height, enter a positive whole number that is less than 24  " ); 
+              System.out.println("\nFor the height, enter a positive whole number that is less than 24  " ); 
               high = input.nextInt();
                    if (high > 23)
                    {
-                       System.out.println();
-                       System.out.print("Invalid number!");
-                       System.out.println();
+                       System.out.print("\nInvalid number!\n");
                    }
                    if (high < 0)
                    {
-                       System.out.println();
-                       System.out.print("Invalid number!");
-                       System.out.println();
+                       System.out.print("\nInvalid number!\n");
                    }
 
-           } while (high > 23); 
+           } while (high > 23 || high < 0); 
      
-        System.out.println();
-        System.out.println("You entered  " + high);
-        System.out.println();
+        System.out.println("\nYou entered  " + high);
 
         if (high == 0)
         { 
-           System.out.println("!! A pyramid cannot be generated for " + high + " rows high!!");
+           System.out.println("\n!! A pyramid cannot be generated for " + high + " rows high!!");
         }
         else 
            {
-              System.out.println("Here is a half pyramid that is " + high + " rows high and is right justified");  
-              System.out.println(); 
+              System.out.println("\nHere is a half pyramid that is " + high + " rows high and is right justified\n");  
                 
 
                  for (int r = high; r > 0; r--)             // loop to generate num of rows for height
@@ -66,8 +60,8 @@ public class Pset1
                         System.out.print("#");
                      }
 
+                  System.out.println(lineBuilder.toString());
 
-                   System.out.println(); 
                  }
            } 
 
